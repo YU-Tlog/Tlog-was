@@ -19,11 +19,8 @@ public enum ErrorType {
     //데이터
     NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 데이터 입니다."),
     ROLE_NOT_FOUND(HttpStatus.NOT_FOUND, "역할이 존재하지 않습니다."),
-    OWNER_NOT_FOUND(HttpStatus.NOT_FOUND,"존재하지 않은 점주 입니다."),
 
     //데이터 충돌
-    ALREADY_EXISTS_GUEST(HttpStatus.CONFLICT, "이미 존재하는 게스트입니다."),
-    ALREADY_EXISTS_Owner(HttpStatus.CONFLICT, "이미 존재하는 점주입니다."),
 
 
     // 서버 에러

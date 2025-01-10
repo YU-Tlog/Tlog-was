@@ -1,4 +1,4 @@
-package com.se.Tlog.domain.User;
+package com.se.Tlog.domain.User.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

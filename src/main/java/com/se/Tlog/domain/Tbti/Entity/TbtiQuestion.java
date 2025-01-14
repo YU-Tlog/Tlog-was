@@ -1,5 +1,7 @@
 package com.se.Tlog.domain.Tbti.Entity;
 
+import com.se.Tlog.global.exception.CustomException;
+import com.se.Tlog.global.response.error.ErrorType;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,4 +28,22 @@ public class TbtiQuestion {
         this.content = content;
         this.traitCategory = traitCategory;
     }
+
+    // 질문 생성 메서드
+    public static TbtiQuestion creation(String content, TraitCategory traitCategory) {
+        return TbtiQuestion.builder()
+                .content(content)
+                .traitCategory(traitCategory)
+                .build();
+    }
+
+    // 유효성 검사 메서드
+    private void validateContent(String content){
+        if(content == null || content.isBlank()){
+            throw new CustomException(ErrorType.CONTENT_NOT_FOUND);
+        }
+        // 필요한 검사가 있다면 지속적으로 추가할 예정!
+    }
+
+
 }

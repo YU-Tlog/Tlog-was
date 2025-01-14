@@ -2,6 +2,10 @@ package com.se.Tlog.domain.Travle.Entity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.se.Tlog.domain.Travel.Entity.Destination;
+import com.se.Tlog.domain.Travel.Entity.DestinationTag;
+import com.se.Tlog.domain.Travel.Entity.DestinationTagPK;
+import com.se.Tlog.domain.Travel.Entity.Tag;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +18,13 @@ import jakarta.transaction.Transactional;
 @Transactional
 class DestinationTest {
 	@Autowired
-	private JpaRepository<Destination, Integer> destinationRepository;
+	private JpaRepository<Destination, Long> destinationRepository;
 
 	@Autowired
 	private JpaRepository<DestinationTag, DestinationTagPK> desTagRepository;
 
 	@Autowired
-	private JpaRepository<Tag, Integer> tagRepository;
+	private JpaRepository<Tag, Long> tagRepository;
 	
 	@DisplayName("여행지 등록 테스트")
 	@Test

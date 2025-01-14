@@ -28,10 +28,14 @@ public class TravelCourse {
 	private User user;
 	
 	@OneToMany
-	private List<Destination> course = new ArrayList<Destination>();
+	private List<TravelCourseDestination> course = new ArrayList<TravelCourseDestination>();
 	
 	public void addDestination(Destination destination) {
-		course.add(destination);
+		course.add(
+				TravelCourseDestination.builder()
+				.travelCourse(this)
+				.destination(destination)
+				.build());
 	}
 	
 	@Builder

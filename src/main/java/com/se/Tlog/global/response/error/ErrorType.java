@@ -7,6 +7,11 @@ import org.springframework.http.HttpStatus;
 @Getter
 @RequiredArgsConstructor
 public enum ErrorType {
+
+    // 400 잘못된 요청
+    CONTENT_NOT_FOUND(HttpStatus.BAD_REQUEST, "Content 내용이 비어있습니다."),
+    ROLE_MISMATCH(HttpStatus.BAD_REQUEST,"Role 값을 잘못 입력하였습니다."),
+
     // 인증
     // 401
     UN_AUTHENTICATION(HttpStatus.UNAUTHORIZED, "인증이 실패되었습니다."),
@@ -19,7 +24,6 @@ public enum ErrorType {
     //데이터
     NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 데이터 입니다."),
     ROLE_NOT_FOUND(HttpStatus.NOT_FOUND, "역할이 존재하지 않습니다."),
-
     //데이터 충돌
 
 

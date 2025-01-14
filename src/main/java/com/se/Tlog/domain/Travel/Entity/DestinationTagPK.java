@@ -1,4 +1,4 @@
-package com.se.Tlog.domain.Travle.Entity;
+package com.se.Tlog.domain.Travel.Entity;
 
 import java.io.Serializable;
 import jakarta.persistence.Embeddable;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DestinationTagPK implements Serializable {
-	private int destination_id;
-	private int tag_id;
+	private Long destination_id;
+	private Long tag_id;
 }

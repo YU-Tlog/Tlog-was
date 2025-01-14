@@ -1,4 +1,4 @@
-package com.se.Tlog.domain.Travle.Entity;
+package com.se.Tlog.domain.Travel.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Tag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	private String name;
 	

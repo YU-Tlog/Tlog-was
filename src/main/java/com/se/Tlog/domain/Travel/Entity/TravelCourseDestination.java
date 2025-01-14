@@ -1,4 +1,4 @@
-package com.se.Tlog.domain.Travle.Entity;
+package com.se.Tlog.domain.Travel.Entity;
 
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Embeddable;
@@ -15,6 +15,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class TravelCourseDestination {
 	@Embeddable
 	@EqualsAndHashCode
@@ -22,8 +24,8 @@ public class TravelCourseDestination {
 	@AllArgsConstructor
 	@Getter
 	public static class PK {
-		private int travelCourseId;
-		private int destinationId;
+		private Long travelCourseId;
+		private Long destinationId;
 	}
 	
 	@EmbeddedId

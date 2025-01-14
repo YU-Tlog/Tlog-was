@@ -1,4 +1,4 @@
-package com.se.Tlog.domain.Travle.Entity;
+package com.se.Tlog.domain.Travel.Entity;
 
 import com.se.Tlog.domain.User.Entity.User;
 import io.micrometer.common.lang.NonNull;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Review {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@ManyToOne
 	@JoinColumn(name = "userId")

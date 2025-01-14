@@ -1,4 +1,4 @@
-package com.se.Tlog.domain.Travle.Entity;
+package com.se.Tlog.domain.Travel.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class TravelCourse {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@ManyToOne
 	@JoinColumn(name = "userId")

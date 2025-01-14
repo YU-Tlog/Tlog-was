@@ -21,7 +21,7 @@ public class TbtiAnswer {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "question_id")
+    @JoinColumn(name = "tbtiQuestion_id")
     private TbtiQuestion tbtiQuestion;
 
     private int score;
@@ -31,5 +31,14 @@ public class TbtiAnswer {
         this.user = user;
         this.tbtiQuestion = tbtiQuestion;
         this.score = score;
+    }
+
+    //응답 생성 메서드
+    public static TbtiAnswer createAnswer(User user, TbtiQuestion tbtiQuestion, int score) {
+        return TbtiAnswer.builder()
+                .user(user)
+                .tbtiQuestion(tbtiQuestion)
+                .score(score)
+                .build();
     }
 }

@@ -1,33 +1,27 @@
 package com.se.Tlog.domain.Travel.Entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "tags")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Tag {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+	private String id;
 	private String name;
-	
-	@OneToMany(mappedBy = "tag")
-	private List<DestinationTag> destinationList = new ArrayList<>();
-	
+
 	@Builder
-	public Tag(String name) {
+	public Tag(String name, int weight) {
 		this.name = name;
+	}
+
+	public static void createTag(String name,int weight) {
+		Tag tag = Tag.builder()
+				.name(name)
+				.build();
 	}
 }

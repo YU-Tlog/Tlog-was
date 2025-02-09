@@ -5,11 +5,14 @@ spring:
     url: ${MYSQL_URL}
     username: ${MYSQL_USERNAME}
     password: ${MYSQL_PASSWORD}
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     open-in-view: false
     hibernate:
-     ddl-auto: create
+     ddl-auto: update
      naming:
        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
@@ -17,7 +20,12 @@ spring:
       hibernate:
         format_sql: true
         show-sql: true
-
+# 🔹 로깅 레벨 추가
+logging:
+  level:
+    org.springframework.data.mongodb.core: TRACE
+    org.mongodb.driver: INFO
+    org.springframework.data.mongodb.core.MongoTemplate: TRACE
 --- #jwt
 
 jwt:

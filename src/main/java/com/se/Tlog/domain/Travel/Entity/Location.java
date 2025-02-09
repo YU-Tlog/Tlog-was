@@ -1,14 +1,15 @@
 package com.se.Tlog.domain.Travel.Entity;
-
-import java.io.Serializable;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Embeddable
-@NoArgsConstructor
+
+@Getter
 @AllArgsConstructor
-public class DestinationTagPK implements Serializable {
-	private Long destination_id;
-	private Long tag_id;
+@NoArgsConstructor
+@Embeddable
+public class Location {
+    private String longitude;
+    private String latitude;
 }

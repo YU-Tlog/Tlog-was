@@ -23,10 +23,11 @@ public enum ErrorType {
 
     //데이터
     NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 데이터 입니다."),
+    NOT_FOUND_TAG(HttpStatus.NOT_FOUND, "존재하지 않는 태그 입니다."),
     ROLE_NOT_FOUND(HttpStatus.NOT_FOUND, "역할이 존재하지 않습니다."),
     //데이터 충돌
-
-
+    ALREADY_EXISTS_TAG(HttpStatus.CONFLICT, "이미 존재하는 태그입니다."),
+    ALREADY_EXISTS_DESTINATION(HttpStatus.CONFLICT, "이미 존재하는 여행지입니다."),
     // 서버 에러
     // 500
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "내부 서버 에러. 서버 팀으로 연락주시기 바랍니다.");

@@ -33,3 +33,13 @@ jwt:
   issuer: ${JWT_ISSUER}
   access-expiration: ${JWT_ACCESS_EXPIRATION}
   refresh-expiration: ${JWT_REFRESH_EXPIRATION}
+  
+sso:
+  clientId:
+    kakao: ${SSO_KAKAO_CLIENT_ID}
+    google: ${SSO_GOOGLE_CLIENT_ID}
+  callback:
+    kakao: ${SSO_CALLBACK_URL}/kakao
+    google: ${SSO_CALLBACK_URL}/google
+  clientSecret:
+    google: ${SSO_GOOGLE_SECRET}
